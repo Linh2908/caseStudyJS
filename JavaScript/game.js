@@ -35,10 +35,14 @@ function playBall() {
        lives --;
        if(!lives) {
            let anwser = confirm("YOU LOSE :). Are you play agian?");
+           document.querySelector("#play").style.display = "none";
+           document.querySelector("#stop").style.display = "none";
            if(anwser){
+                document.querySelector("#play").style.display = "block";
+                document.querySelector("#stop").style.display = "block";
                document.location.reload();
            }else{
-                alert("SEEM YOU AGAIN !!!")
+                alert("SEEN YOU AGAIN !!!")
                 clearInterval(checkPlay);
             }
            
@@ -163,7 +167,7 @@ let bricks = [];
                             if(anwser){
                                 document.location.reload();
                             }else{
-                                alert("SEEM YOU AGAIN !!!")
+                                alert("SEEN YOU AGAIN !!!")
                                 clearInterval(checkPlay);
                             }
                             
