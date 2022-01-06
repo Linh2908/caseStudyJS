@@ -54,20 +54,18 @@ function playBall() {
 
         
     }
+    
+   
     drawLives();
     drawScore();
-    collisionBricks();
-    drawBrick();
-    bar.draw();
+    collisionBricks();   
     bar.moveRight();
     bar.moveLeft();
     ball.moveBall();
     ball.drawBall();
+    drawBrick();  
+    bar.draw();
 }
-
-
- 
-
 
 
 
@@ -158,7 +156,7 @@ let bricks = [];
                 let brick = bricks[c][r];
                 if(brick.status){
                     if(checkCollision(ball, brick)){
-                        ball.setSpeedY(-2);
+                        ball.setSpeedY(2);
                         brick.status = false;
                         count ++;
 
@@ -169,6 +167,8 @@ let bricks = [];
                             }else{
                                 alert("SEEN YOU AGAIN !!!")
                                 clearInterval(checkPlay);
+                                document.querySelector("#play").style.display = "none";
+                                document.querySelector("#stop").style.display = "none";
                             }
                             
                         }
@@ -184,11 +184,11 @@ function drawScore() {
     score.draw();
 }
 function drawLives() {
-    let myLives = new myContext(`LIVES : ${lives}`,400,15);
+    let myLives = new myContext(` ♥ : ${lives}`,400,15);
     myLives.draw();
 }
 
-let checkPlay = setInterval(playBall,20);
+let checkPlay;
 document.querySelector("#play").onclick = function () {
     checkPlay = setInterval(playBall,20)
 }
@@ -198,5 +198,7 @@ document.querySelector("#stop").onclick = function () {
 }
 
 document.querySelector("#resert").onclick = function () {
+    document.querySelector("#play").style.display = "block";
+    document.querySelector("#stop").style.display = "block";
    document.location.reload();
 }

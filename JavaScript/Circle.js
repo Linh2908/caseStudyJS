@@ -16,7 +16,7 @@ class myCircle {
     drawBall(){
         let ctx =  document.querySelector("#myCanvas").getContext("2d");
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);  
         ctx.fillStyle = "#FFB8A2";
         ctx.fill();
         ctx.closePath();
