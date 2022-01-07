@@ -17,7 +17,6 @@ class myBar1 {
         let ctx = document.querySelector("#myCanvas").getContext("2d");
         ctx.fillRect(this.x,this.y, this.w, this.h);
         ctx.fillStyle = "#FFB8A2";
-        ctx.fill();
     }
 
     moveRight() {

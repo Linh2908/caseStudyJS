@@ -12,6 +12,5 @@ class Brick {
         ctx.fillStyle = "#db2323";
         ctx.fillRect(this.x, this.y, this.w, this.h);
         
-        ctx.fill();
     }
 }
