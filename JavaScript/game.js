@@ -205,8 +205,7 @@ document.querySelector("#resert").onclick = function () {
 }
 
 window.onload =function (){
-    console.log(true);
-    let max = +localStorage.getItem(`point 0`);
+    let max = +localStorage.getItem(`point ${indexPoint}`);
     for (let index = 0; index < localStorage.length; index++) {
         
         if(+localStorage.getItem(`point ${index}`) > max){
