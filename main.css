@@ -40,3 +40,18 @@ h3{
 p{margin-top: 10px;
 color:turquoise;
 }
+
+#listPoint{
+    position: absolute; 
+    top: 200px; 
+    border:3px solid rgb(192, 42, 42);
+    padding: 10px 30px;
+    border-radius: 6px;
+    color:red;
+    left:20px;
+    box-shadow: 1px 1px 10px 11px #ccc;
+}
+.point{
+    font-size: 30px;
+    margin-left: 20px;
+}

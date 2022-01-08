@@ -11,10 +11,9 @@ const brickTop = 30;
 const brickLeft = 30;
 let count = 0;
 let lives =3;
+let indexPoint = Math.floor(Math.random()*10 + 1) ;
 
 
-ball.drawBall();
-bar.draw();
 function playBall() {
     ball.clearRect();
 
@@ -34,6 +33,7 @@ function playBall() {
     }else if(ball.y>=490){
        lives --;
        if(!lives) {
+            localStorage.setItem(`point ${indexPoint}`, count);
            let anwser = confirm("YOU LOSE :). Are you play agian?");
            document.querySelector("#play").style.display = "none";
            document.querySelector("#stop").style.display = "none";
@@ -162,6 +162,7 @@ let bricks = [];
 
                         if(count == (bricksRow * bricksCol)) {
                             let anwser = confirm("You Win. Phay again ??");
+                            localStorage.setItem(`point ${indexPoint}`, count);
                             if(anwser){
                                 document.location.reload();
                             }else{
@@ -201,4 +202,17 @@ document.querySelector("#resert").onclick = function () {
     document.querySelector("#play").style.display = "block";
     document.querySelector("#stop").style.display = "block";
    document.location.reload();
+}
+
+window.onload =function (){
+    console.log(true);
+    let max = +localStorage.getItem(`point 0`);
+    for (let index = 0; index < localStorage.length; index++) {
+        
+        if(+localStorage.getItem(`point ${index}`) > max){
+            max = +localStorage.getItem(`point ${index}`);
+        }
+        
+    }
+    document.querySelector("#listPoint").innerHTML = `TOP POINT : <strong class="point">${max} </strong>`;
 }
